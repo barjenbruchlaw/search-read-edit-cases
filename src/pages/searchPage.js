@@ -1,32 +1,32 @@
-import React, {useState} from 'react'
-import { Container, Navbar, Nav, Table, Row, Col, Modal, Form, Button } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Table, Modal, Form, Button } from 'react-bootstrap'
 import PageNavBar from '../components/PageNavBar'
 import CaseModal from '../components/CaseModal'
 
 const SearchPage = () => {
 
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <>
 
-    <PageNavBar />
-    
-    <h1 className='m-5 pt-5'>Search for a case:</h1>
+      <PageNavBar />
 
-<Form  className='ps-5 ms-5'>
-      <Form.Control style={{width: '60vw'}} placeholder='Search by Property Manager, Defendant or Address'/>
-</Form> <br /> <br />
+      <h1 className='m-5 pt-5'>Search for a case:</h1>
+
+      <Form className='ps-5 ms-5'>
+        <Form.Control style={{ width: '60vw' }} placeholder='Search by Property Manager, Defendant or Address' />
+      </Form> <br /> <br />
 
       <Table striped bordered hover className='m-2'>
         <thead className='fs-3'>
           <tr>
             <th>#</th>
             <th>Date placed</th>
-            <th>Status</th>
+            <th>Case number</th>
             <th>Property Manager</th>
             <th>Property Owner</th>
             <th>Defendant 1</th>
@@ -34,11 +34,11 @@ const SearchPage = () => {
             <th>View/Edit</th>
           </tr>
         </thead>
-        <tbody  className='fs-5'>
+        <tbody className='fs-5'>
           <tr>
             <th>1</th>
             <th>2022-01-21</th>
-            <th>Out for service</th>
+            <th>2216-CV00000</th>
             <th>ABC Company</th>
             <th>123 Main, LLC</th>
             <th>John L. Smith</th>
@@ -48,7 +48,7 @@ const SearchPage = () => {
           <tr>
             <th>2</th>
             <th>2022-02-01</th>
-            <th>Out for service</th>
+            <th>2216-CV00000</th>
             <th>ABC Company</th>
             <th>123 Main, LLC</th>
             <th>Mary A. Jones</th>
@@ -56,9 +56,9 @@ const SearchPage = () => {
             <th><Button disabled>View/Edit</Button></th>
           </tr>
           <tr>
-          <th>3</th>
+            <th>3</th>
             <th>2022-02-10</th>
-            <th>Out for service</th>
+            <th>EF000000</th>
             <th>ABC Company</th>
             <th>123 Main, LLC</th>
             <th>Frank R. Baker</th>
@@ -66,9 +66,9 @@ const SearchPage = () => {
             <th><Button disabled>View/Edit</Button></th>
           </tr>
           <tr>
-          <th>4</th>
+            <th>4</th>
             <th>2022-02-21</th>
-            <th>Petition Filed</th>
+            <th></th>
             <th>ABC Company</th>
             <th>123 Main, LLC</th>
             <th>Jane M. Jones</th>
@@ -82,7 +82,7 @@ const SearchPage = () => {
         <Modal.Header className='bg-light' closeButton>
           <Modal.Title>View or Edit Case</Modal.Title>
         </Modal.Header>
-        
+
         <CaseModal />
 
         <Modal.Footer>
@@ -95,7 +95,7 @@ const SearchPage = () => {
         </Modal.Footer>
       </Modal>
 
-    
+
     </>
   )
 }
