@@ -1,5 +1,6 @@
 import React from 'react'
 import { Modal, Tabs, Tab } from 'react-bootstrap'
+import CaseModalTab0 from './CaseModalTab0'
 import CaseModalTab1 from './CaseModalTab1'
 import CaseModalTab2 from './CaseModalTab2'
 import CaseModalTab3 from './CaseModalTab3'
@@ -14,9 +15,13 @@ const CaseModal = () => {
 
             <Modal.Body>
 
-                <Tabs className='p-4'>
+                <Tabs className='p-1'>
 
-                    <Tab eventKey='Parties/Address' title='Parties/Address'>
+                    <Tab eventKey='Basic info' title='Basic info'>
+                        <CaseModalTab0 />
+                    </Tab>
+
+                    <Tab eventKey='Reasons for eviction' title='Reasons for eviction'>
                         <CaseModalTab1 />
                     </Tab>
 
