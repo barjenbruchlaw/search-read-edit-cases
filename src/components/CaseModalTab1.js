@@ -40,7 +40,6 @@ const CaseModalTab1 = () => {
                     <Col xs={3}>Is this an squatter case?</Col>
                     <Col className='bg-light text-dark'><Form.Check className='ms-3' inline type='radio' name='isSquatter' onChange={e => setShowSQArea(true)} label='Yes' />
                         <Form.Check inline type='radio' name='isSquatter' checked='true' onChange={e => setShowSQArea(false)} label='No' /></Col></Row>
-
                 <Row className='pt-3'>{showSQArea ? <SQArea /> : null}</Row>
                 <Row className='ms-2 bg-primary text-light'>
                     <Col xs={3}>Is this an holdover tenant?</Col>
@@ -75,7 +74,7 @@ const RentArea = () => {
                         <Col xs={4}><Form.Label>Utility Balance</Form.Label>
                             <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='225' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
                         <Col xs={4}><Form.Label>Additional Fee Balance</Form.Label>
-                            <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' placeholder='Enter Additional Fee Balance' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
+                            <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' className='text-end' placeholder='0' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
                     </Row>
 
                     <Row className='p-2'><Form.Label>Total Amount Owed</Form.Label><Col xs={6}><InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='4,525' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col></Row>
@@ -89,25 +88,70 @@ const RentArea = () => {
 
 const UDArea = () => {
     return (
-        <h1>UD SELECTED</h1>
+        <>
+            <Container>
+
+                <Form.Group className='mb-3' controlId='inputIncident information'>
+
+                    <Row className='p-2'><Col xs={6}><Form.Label>Date of violation or discovery of violation</Form.Label>
+                        <Form.Control type='date' /></Col>
+                        <Col xs={6}><Form.Label>Paragraph or section of lease violated</Form.Label>
+                            <Form.Control /></Col>
+                    </Row>
+
+                    <Row className='p-2'><Col><Form.Label>Describe the lease violation below</Form.Label>
+                        <Form.Control as='textarea' rows={3} placeholder='Describe the violation here' /></Col></Row>
+                    <Row><Col className='ms-2' xs={4}><Form.Label>Date of notice:</Form.Label><Form.Control type='date' /></Col></Row>
+
+                </Form.Group>
+
+            </Container>
+        </>
     )
 }
 
 const EVArea = () => {
     return (
-        <h1>EMERGENCY SELECTED</h1>
+        <>
+            <Form.Group className='mb-3' controlId='inputIncident information'>
+
+                <Row className='p-2'><Col xs={6}><Form.Label>Date of incident</Form.Label>
+                    <Form.Control type='date' /></Col>
+                    <Col xs={6}><Form.Label>Time of incident</Form.Label>
+                        <Form.Control type='time' /></Col>
+                </Row>
+
+                <Row className='p-2'><Col><Form.Label>Describe the incident below</Form.Label>
+                    <Form.Control as='textarea' rows={6} placeholder='Describe the incident here' /></Col></Row>
+                <Row><Col className='ms-2' xs={4}><Form.Label>Date of notice (if any):</Form.Label><Form.Control type='date' /></Col></Row>
+
+            </Form.Group>
+        </>
     )
 }
 
 const SQArea = () => {
     return (
-        <h1>SQUATTER SELECTED</h1>
+        <>
+            <Form.Group className='mb-3' controlId='input Squatter Information'>
+                <Row><Col className='ms-2' xs={4}><Form.Label>Date of notice:</Form.Label><Form.Control type='date' /></Col></Row>
+            </Form.Group>
+        </>
     )
 }
 
 const HTArea = () => {
     return (
-        <h1>HOLDOVER SELECTED</h1>
+        <>
+            <Container>
+                <Form className='pb-3 ms-2'>
+                    <Row><Col><Form.Label>Monthly Rent Amount</Form.Label>
+                        <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' placeholder='0' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
+                        <Col xs={2} />
+                        <Col><Form.Label>Date of notice:</Form.Label><Form.Control type='date' /></Col></Row>
+                </Form>
+            </Container>
+        </>
     )
 }
 export default CaseModalTab1
