@@ -45,6 +45,12 @@ const CaseModalTab4 = () => {
                 </Row>
                 <Row className='py-2'>
 
+                    <Col xs={4}>Person served</Col>
+                    <Col><Form.Control placeholder="Person served" /></Col>
+
+                </Row>
+                <Row className='py-2'>
+
                     <Col xs={4}>Date service return accepted by court</Col>
                     <Col><Form.Control type='date' /></Col>
 

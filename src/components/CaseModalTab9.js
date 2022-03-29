@@ -14,7 +14,8 @@ const CaseModalTab9 = () => {
                     </Col>
                     <Col xs={2} />
                     <Col xs={3}>
-                        Last request: 3/28/2022
+                        Last request: 3/28/2022 <br />
+                        By: Sam Pitzel
                     </Col>
                     <Col xs={2} />
                 </Row>

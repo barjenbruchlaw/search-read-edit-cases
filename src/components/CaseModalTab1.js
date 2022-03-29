@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, Row, Col, Form, InputGroup, Button } from 'react-bootstrap'
+import { Container, Row, Col, Form, InputGroup } from 'react-bootstrap'
 
 const CaseModalTab1 = () => {
 
@@ -9,32 +9,46 @@ const CaseModalTab1 = () => {
 
     const [showEVArea, setShowEVArea] = useState(false)
 
+    const [showSQArea, setShowSQArea] = useState(false)
+
+    const [showHTArea, setShowHTArea] = useState(false)
+
 
 
     return (
         <div className='mt-3'>
-        Is rent delinquent?
-            <Form.Check className='ms-3' inline type='radio' name='isRentDelinquent' checked='true' onChange={e => setShowRentArea(true)} label='Yes' />
-            <Form.Check inline type='radio' name='isRentDelinquent' onChange={e => setShowRentArea(false)} label='No' />
-            
-            {showRentArea ? <RentArea /> : null}
+            <Container>
+                <Row className='ms-2 bg-primary text-light'>
+                    <Col xs={3}>Is rent delinquent?</Col>
+                    <Col className='bg-light text-dark'><Form.Check className='ms-3' inline type='radio' name='isRentDelinquent' checked='true' onChange={e => setShowRentArea(true)} label='Yes' />
+                        <Form.Check inline type='radio' name='isRentDelinquent' onChange={e => setShowRentArea(false)} label='No' /></Col></Row>
 
-        <br />
+                <Row className='pt-3'>{showRentArea ? <RentArea /> : null}</Row>
+                <Row className='ms-2 bg-primary text-light'>
+                    <Col xs={3}>Is there a lease violation?</Col>
+                    <Col className='bg-light text-dark'><Form.Check className='ms-3' inline type='radio' name='isLeaseViolation' onChange={e => setShowUDArea(true)} label='Yes' />
+                        <Form.Check inline type='radio' name='isLeaseViolation' checked='true' onChange={e => setShowUDArea(false)} label='No' /></Col></Row>
 
-        Is there a lease violation?
-            <Form.Check className='ms-3' inline type='radio' name='isLeaseViolation' onChange={e => setShowUDArea(true)} label='Yes' />
-            <Form.Check inline type='radio' name='isLeaseViolation' checked='true' onChange={e => setShowUDArea(false)} label='No' />
-            
-            {showUDArea ? <UDArea /> : null}
+                <Row className='pt-3'>{showUDArea ? <UDArea /> : null}</Row>
+                <Row className='ms-2 bg-primary text-light'>
+                    <Col xs={3}>Is this an emergency eviction?</Col>
+                    <Col className='bg-light text-dark'><Form.Check className='ms-3' inline type='radio' name='isEmergencyEviction' onChange={e => setShowEVArea(true)} label='Yes' />
+                        <Form.Check inline type='radio' name='isEmergencyEviction' checked='true' onChange={e => setShowEVArea(false)} label='No' /></Col></Row>
 
-        <br />
-        Is this an emergency eviction?
-            <Form.Check className='ms-3' inline type='radio' name='isEmergencyEviction' onChange={e => setShowEVArea(true)} label='Yes' />
-            <Form.Check inline type='radio' name='isEmergencyEviction' checked='true' onChange={e => setShowEVArea(false)} label='No' />
-            
-            {showEVArea ? <EVArea /> : null}
+                <Row className='pt-3'>{showEVArea ? <EVArea /> : null}</Row>
+                <Row className='ms-2 bg-primary text-light'>
+                    <Col xs={3}>Is this an squatter case?</Col>
+                    <Col className='bg-light text-dark'><Form.Check className='ms-3' inline type='radio' name='isSquatter' onChange={e => setShowSQArea(true)} label='Yes' />
+                        <Form.Check inline type='radio' name='isSquatter' checked='true' onChange={e => setShowSQArea(false)} label='No' /></Col></Row>
 
-        <br />
+                <Row className='pt-3'>{showSQArea ? <SQArea /> : null}</Row>
+                <Row className='ms-2 bg-primary text-light'>
+                    <Col xs={3}>Is this an holdover tenant?</Col>
+                    <Col className='bg-light text-dark'><Form.Check className='ms-3' inline type='radio' name='isHoldover' onChange={e => setShowHTArea(true)} label='Yes' />
+                        <Form.Check inline type='radio' name='isHoldover' checked='true' onChange={e => setShowHTArea(false)} label='No' /></Col></Row>
+
+                <Row className='pt-3'>{showHTArea ? <HTArea /> : null}</Row>
+            </Container>
         </div>
 
     )
@@ -43,30 +57,31 @@ const CaseModalTab1 = () => {
 const RentArea = () => {
     return (
         <>
+            <Container>
+                <Form className='mb-3' controlId='inputRentOwed'>
 
-                            <Form className='mb-3' controlId='inputRentOwed'>
+                    <Row className='p-2'><Col xs={6}><Form.Label>Monthly Rent Amount</Form.Label>
+                        <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='1,000' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
+                        <Col xs={6}><Form.Label>Date Rent is Due</Form.Label>
+                            <Form.Control value='3/1/2022' /></Col></Row>
 
-                                <Row className='p-2'><Col  xs={6}><Form.Label>Monthly Rent Amount</Form.Label>
-                                <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='1,000' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
-                                <Col xs={6}><Form.Label>Date Rent is Due</Form.Label>
-                                <Form.Control value='3/1/2022'/></Col></Row>
+                    <Row className='p-2'><Col xs={6}><Form.Label>Rent Balance</Form.Label>
+                        <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='3,000' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
+                        <Col xs={6}><Form.Label>Date of Balance</Form.Label>
+                            <Form.Control value='3/15/2022' /></Col></Row>
 
-                                <Row className='p-2'><Col  xs={6}><Form.Label>Rent Balance</Form.Label>
-                                <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='3,000' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
-                                <Col xs={6}><Form.Label>Date of Balance</Form.Label>
-                                <Form.Control value='3/15/2022'/></Col></Row>
+                    <Row className='p-2'><Col xs={4}><Form.Label>Late Fee Balance</Form.Label>
+                        <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='300' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
+                        <Col xs={4}><Form.Label>Utility Balance</Form.Label>
+                            <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='225' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
+                        <Col xs={4}><Form.Label>Additional Fee Balance</Form.Label>
+                            <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' placeholder='Enter Additional Fee Balance' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
+                    </Row>
 
-                                <Row className='p-2'><Col  xs={4}><Form.Label>Late Fee Balance</Form.Label>
-                                <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='300' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
-                                <Col  xs={4}><Form.Label>Utility Balance</Form.Label>
-                                <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='225' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
-                                <Col  xs={4}><Form.Label>Additional Fee Balance</Form.Label>
-                                <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' placeholder='Enter Additional Fee Balance' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
-                                </Row>
+                    <Row className='p-2'><Form.Label>Total Amount Owed</Form.Label><Col xs={6}><InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='4,525' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col></Row>
 
-                                <Row className='p-2'><Form.Label>Total Amount Owed</Form.Label><Col xs={6}><InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='4,525' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col></Row>    
-
-                            </Form>
+                </Form>
+            </Container>
 
         </>
     )
@@ -81,6 +96,18 @@ const UDArea = () => {
 const EVArea = () => {
     return (
         <h1>EMERGENCY SELECTED</h1>
+    )
+}
+
+const SQArea = () => {
+    return (
+        <h1>SQUATTER SELECTED</h1>
+    )
+}
+
+const HTArea = () => {
+    return (
+        <h1>HOLDOVER SELECTED</h1>
     )
 }
 export default CaseModalTab1
