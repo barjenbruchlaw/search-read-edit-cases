@@ -59,25 +59,25 @@ const RentArea = () => {
             <Container>
                 <Form className='mb-3' controlId='inputRentOwed'>
 
-                    <Row className='p-2'><Col xs={6}><Form.Label>Monthly Rent Amount</Form.Label>
-                        <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='1,000' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
-                        <Col xs={6}><Form.Label>Date Rent is Due</Form.Label>
+                    <Row className='p-2'><Col xs={3}><Form.Label>Monthly Rent Amount</Form.Label>
+                        <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='1,000.00' className='text-end' /></InputGroup></Col>
+                        <Col xs={3}><Form.Label>Date Rent is Due</Form.Label>
                             <Form.Control value='3/1/2022' /></Col></Row>
 
-                    <Row className='p-2'><Col xs={6}><Form.Label>Rent Balance</Form.Label>
-                        <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='3,000' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
-                        <Col xs={6}><Form.Label>Date of Balance</Form.Label>
+                    <Row className='p-2'><Col xs={3}><Form.Label>Rent Balance</Form.Label>
+                        <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='3,000.00' className='text-end' /></InputGroup></Col>
+                        <Col xs={3}><Form.Label>Date of Balance</Form.Label>
                             <Form.Control value='3/15/2022' /></Col></Row>
 
-                    <Row className='p-2'><Col xs={4}><Form.Label>Late Fee Balance</Form.Label>
-                        <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='300' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
-                        <Col xs={4}><Form.Label>Utility Balance</Form.Label>
-                            <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='225' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
-                        <Col xs={4}><Form.Label>Additional Fee Balance</Form.Label>
-                            <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' className='text-end' placeholder='0' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
+                    <Row className='p-2'><Col xs={3}><Form.Label>Late Fee Balance</Form.Label>
+                        <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='300.00' className='text-end' /></InputGroup></Col>
+                        <Col xs={3}><Form.Label>Utility Balance</Form.Label>
+                            <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='225.25' className='text-end' /></InputGroup></Col>
+                        <Col xs={3}><Form.Label>Additional Fee Balance</Form.Label>
+                            <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' className='text-end' placeholder='0.00' /></InputGroup></Col>
                     </Row>
 
-                    <Row className='p-2'><Form.Label>Total Amount Owed</Form.Label><Col xs={6}><InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='4,525' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col></Row>
+                    <Row className='p-2'><Col xs={6} /><Col xs={6}><Form.Label className='fw-bold'>Total Amount Owed</Form.Label><InputGroup><InputGroup.Text className='fw-bold'>$</InputGroup.Text><Form.Control type='currency' className='fw-bold text-end' value='4,525.25' /></InputGroup></Col></Row>
 
                 </Form>
             </Container>

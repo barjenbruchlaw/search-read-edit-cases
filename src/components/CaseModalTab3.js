@@ -16,60 +16,60 @@ const CaseModalTab3 = () => {
                 </thead>
                 <tbody>
                     <tr>
-                        <th>1</th>
-                        <th>3/15/2022</th>
-                        <th>James J. Jonas</th>
-                        <th>Case submitted by client</th>
+                        <td>1</td>
+                        <td>3/15/2022</td>
+                        <td>James J. Jonas</td>
+                        <td>Case submitted by client</td>
                     </tr>
                     <tr>
-                        <th>2</th>
-                        <th>3/18/2022</th>
-                        <th>Jennifer Pate</th>
-                        <th>Case filed with court</th>
+                        <td>2</td>
+                        <td>3/18/2022</td>
+                        <td>Jennifer Pate</td>
+                        <td>Case filed with court</td>
                     </tr>
                     <tr>
-                        <th>3</th>
-                        <th>3/23/2022</th>
-                        <th></th>
-                        <th>Case accepted by court</th>
+                        <td>3</td>
+                        <td>3/23/2022</td>
+                        <td></td>
+                        <td>Case accepted by court</td>
                     </tr>
                     <tr>
-                        <th>4</th>
-                        <th>3/23/2022</th>
-                        <th></th>
-                        <th>Hearing date and judge assigned</th>
+                        <td>4</td>
+                        <td>3/23/2022</td>
+                        <td></td>
+                        <td>Hearing date and judge assigned</td>
                     </tr>
                     <tr>
-                        <th>5</th>
-                        <th>3/23/2022</th>
-                        <th></th>
-                        <th>Summons issued by court</th>
+                        <td>5</td>
+                        <td>3/23/2022</td>
+                        <td></td>
+                        <td>Summons issued by court</td>
                     </tr>
                     <tr>
-                        <th>6</th>
-                        <th>3/24/2022</th>
-                        <th>Jennifer Pate</th>
-                        <th>Service requested by attorney</th>
+                        <td>6</td>
+                        <td>3/24/2022</td>
+                        <td>Jennifer Pate</td>
+                        <td>Service requested by attorney</td>
                     </tr>
                     <tr>
-                        <th>7</th>
-                        <th>3/26/2022</th>
-                        <th>Jennifer Pate</th>
-                        <th>Summons posted to residence</th>
+                        <td>7</td>
+                        <td>3/26/2022</td>
+                        <td>Jennifer Pate</td>
+                        <td>Summons posted to residence</td>
                     </tr>
                     <tr>
-                        <th>8</th>
-                        <th>3/28/2022</th>
-                        <th>Sam Pitzel</th>
-                        <th>Updated ledger requested</th>
+                        <td>8</td>
+                        <td>3/28/2022</td>
+                        <td>Sam Pitzel</td>
+                        <td>Updated ledger requested</td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th><Form.Control placeholder='Add new case status here' /></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><Form.Control placeholder='Add new case status here' /></td>
                     </tr>
                 </tfoot>
             </Table>

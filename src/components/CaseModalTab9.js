@@ -7,7 +7,7 @@ const CaseModalTab9 = () => {
 
             <Container className='py-5 mx-5'>
 
-                <Row className='my-4'>
+                <Row className='py-4'>
                     <Col xs={2} />
                     <Col xs={3}>
                         <Button>Request updated ledger</Button>
@@ -19,7 +19,7 @@ const CaseModalTab9 = () => {
                     </Col>
                     <Col xs={2} />
                 </Row>
-                <Row className='my-4'>
+                <Row className='py-4'>
                     <Col xs={2} />
                     <Col xs={3}>
                         <Button>Request dismissal</Button>
@@ -30,7 +30,7 @@ const CaseModalTab9 = () => {
                     </Col>
                     <Col xs={2} />
                 </Row>
-                <Row className='my-4'>
+                <Row className='py-4'>
                     <Col xs={2} />
                     <Col xs={3}>
                         <Button>Request writ</Button>

@@ -96,7 +96,7 @@ const CaseModalTab0 = () => {
                 <Col xs={1}>
                   <Form.Control
                     name="middleInitial"
-                    placeholder="Mid I"
+                    placeholder="MI"
                     value={inputField.middleInitial}
                   /></Col>
                 <Col>
