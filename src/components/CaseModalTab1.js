@@ -54,7 +54,7 @@ const RentArea = () => {
                                 <Row className='p-2'><Col  xs={6}><Form.Label>Rent Balance</Form.Label>
                                 <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='3,000' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
                                 <Col xs={6}><Form.Label>Date of Balance</Form.Label>
-                                <Form.Control value='3/23/2022'/></Col></Row>
+                                <Form.Control value='3/15/2022'/></Col></Row>
 
                                 <Row className='p-2'><Col  xs={4}><Form.Label>Late Fee Balance</Form.Label>
                                 <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='300' className='text-end' /><InputGroup.Text>.00</InputGroup.Text></InputGroup></Col>
