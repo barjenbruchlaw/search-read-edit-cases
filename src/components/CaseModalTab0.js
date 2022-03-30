@@ -20,10 +20,12 @@ const CaseModalTab0 = () => {
   )
 
   return (
+
     <>
 
       <Form>
         <Container>
+          <NewCaseButtons />
           <Row className='pt-3'>
             <Col>
               <Form.Label>Property Manager:</Form.Label>
@@ -67,7 +69,7 @@ const CaseModalTab0 = () => {
             </Col>
             <Col>
               <Form.Label>Client internal file number:</Form.Label>
-              <Form.Control placeholder='PM File no.' />
+              <Form.Control />
             </Col>
           </Row>
           <Row className='pt-3'>
@@ -118,6 +120,53 @@ const CaseModalTab0 = () => {
         </Container>
       </Form>
 
+    </>
+  )
+}
+
+
+const NewCaseButtons = () => {
+
+  const [caseAccepted, setCaseAccepted] = useState(false)
+  const [showHoldDialog, setShowHoldDialog] = useState(false)
+  const [showRejectDialog, setShowRejectDialog] = useState(false)
+  const acceptButtonClick = () => { setCaseAccepted(true) }
+  const holdButtonClick = () => setShowHoldDialog(!showHoldDialog)
+  const rejectButtonClick = () => setShowRejectDialog(!showRejectDialog)
+
+  return (
+    <>
+      <Row className='pt-3'>
+        <Col />
+        <Col>{caseAccepted ? <Button variant='success' className='fw-bold'>Case Accepted</Button> : <Button variant='info' className='fw-bold' onClick={acceptButtonClick}>Accept Case</Button>}</Col>
+        <Col><Button variant='warning' className='fw-bold' disabled={caseAccepted} onClick={holdButtonClick}>Hold Case</Button></Col>
+        <Col><Button variant='danger' className='fw-bold' disabled={caseAccepted} onClick={rejectButtonClick}>Reject Case</Button></Col>
+        <Col />
+      </Row>
+      {showHoldDialog ? <HoldDialog /> : null}
+      {showRejectDialog ? <RejectDialog /> : null}
+    </>
+  )
+}
+
+const HoldDialog = () => {
+  return (
+    <>
+      <Row className='pt-3'>
+        <Form.Label>Why is this case on hold?</Form.Label>
+        <Col xs={8}><Form.Control /></Col><Col><Button href='/search'>Submit</Button></Col>
+      </Row>
+    </>
+  )
+}
+
+const RejectDialog = () => {
+  return (
+    <>
+      <Row className='pt-3'>
+        <Form.Label>Why is this case being rejected?</Form.Label>
+        <Col xs={8}><Form.Control /></Col><Col><Button href='/search'>Submit</Button></Col>
+      </Row>
     </>
   )
 }
