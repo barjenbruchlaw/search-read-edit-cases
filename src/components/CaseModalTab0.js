@@ -112,7 +112,7 @@ const CaseModalTab0 = () => {
                     value={inputField.suffix}
                   /></Col>
                 <Col className='text-end'><Button disabled={residentNames.length === 1} onClick={() => handleRemoveFields(inputField.id)}>Remove</Button>
-                  <Button className='ps-2' onClick={handleAddFields}>Add</Button></Col></Row>
+                  <Button className='ms-2' onClick={handleAddFields}>Add</Button></Col></Row>
             </div>))}
 
         </Container>
