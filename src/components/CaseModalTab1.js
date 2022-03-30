@@ -59,26 +59,34 @@ const RentArea = () => {
             <Container>
                 <Form className='mb-3' controlId='inputRentOwed'>
 
-                    <Row className='p-2'><Col xs={3}><Form.Label>Monthly Rent Amount</Form.Label>
-                        <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='1,000.00' className='text-end' /></InputGroup></Col>
-                        <Col xs={3}><Form.Label>Date Rent is Due</Form.Label>
-                            <Form.Control value='3/1/2022' /></Col></Row>
-
-                    <Row className='p-2'><Col xs={3}><Form.Label>Rent Balance</Form.Label>
-                        <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='3,000.00' className='text-end' /></InputGroup></Col>
-                        <Col xs={3}><Form.Label>Date of Balance</Form.Label>
-                            <Form.Control value='3/15/2022' /></Col></Row>
-
-                    <Row className='p-2'><Col xs={3}><Form.Label>Late Fee Balance</Form.Label>
-                        <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='300.00' className='text-end' /></InputGroup></Col>
-                        <Col xs={3}><Form.Label>Utility Balance</Form.Label>
-                            <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='225.25' className='text-end' /></InputGroup></Col>
+                    <Row className='p-2'>
+                        <Col xs={1} />
+                        <Col xs={3}><Form.Label>Monthly Rent Amount</Form.Label><InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='1,000.00' className='text-end' /></InputGroup></Col>
+                        <Col xs={3}><Form.Label>Date Rent is Due</Form.Label><Form.Control value='3/1/2022' /></Col>
+                        <Col xs={1} />
                     </Row>
 
-                    <Row className='p-2'><Col xs={3}><Form.Label>Additional Fee Balance</Form.Label>
-                        <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' className='text-end' placeholder='0.00' /></InputGroup></Col>
+                    <Row className='p-2'>
+                        <Col xs={1} />
+                        <Col xs={3}><Form.Label>Rent Balance</Form.Label><InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='3,000.00' className='text-end' /></InputGroup></Col>
+                        <Col xs={3}><Form.Label>Date of Balance</Form.Label><Form.Control value='3/15/2022' /></Col>
+                        <Col xs={1} />
+                    </Row>
+
+                    <Row className='p-2'>
+                        <Col xs={1} />
+                        <Col xs={3}><Form.Label>Late Fee Balance</Form.Label><InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='300.00' className='text-end' /></InputGroup></Col>
+                        <Col xs={3}><Form.Label>Utility Balance</Form.Label><InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' value='225.25' className='text-end' /></InputGroup></Col>
+                        <Col xs={1} />
+                    </Row>
+
+                    <Row className='p-2'>
+                        <Col xs={1} />
+                        <Col xs={3}><Form.Label>Additional Fee Balance</Form.Label><InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' className='text-end' placeholder='0.00' /></InputGroup></Col>
                         <Col xs={3}><Form.Label>Reason for additional fee(s)</Form.Label><Form.Control /></Col>
-                        <Col xs={6}><Form.Label className='fw-bold'>Total Amount Owed</Form.Label><InputGroup><InputGroup.Text className='fw-bold'>$</InputGroup.Text><Form.Control type='currency' className='fw-bold text-end' value='4,525.25' /></InputGroup></Col></Row>
+                        <Col xs={4}><Form.Label className='fw-bold'>Total Amount Owed</Form.Label><InputGroup><InputGroup.Text className='fw-bold'>$</InputGroup.Text><Form.Control type='currency' className='fw-bold text-end' value='4,525.25' /></InputGroup></Col>
+                        <Col xs={1} />
+                    </Row>
 
                 </Form>
             </Container>
@@ -94,15 +102,15 @@ const UDArea = () => {
 
                 <Form.Group className='mb-3' controlId='inputIncident information'>
 
-                    <Row className='p-2'><Col xs={6}><Form.Label>Date of violation or discovery of violation</Form.Label>
+                    <Row className='p-2'><Col xs={1} /><Col xs={5}><Form.Label>Date of violation or discovery of violation</Form.Label>
                         <Form.Control type='date' /></Col>
-                        <Col xs={6}><Form.Label>Paragraph or section of lease violated</Form.Label>
-                            <Form.Control /></Col>
+                        <Col xs={5}><Form.Label>Paragraph or section of lease violated</Form.Label>
+                            <Form.Control /></Col><Col xs={1} />
                     </Row>
 
-                    <Row className='p-2'><Col><Form.Label>Describe the lease violation below</Form.Label>
+                    <Row className='p-2'><Col xs={1} /><Col xs={10}><Form.Label>Describe the lease violation below</Form.Label>
                         <Form.Control as='textarea' rows={3} /></Col></Row>
-                    <Row><Col className='ms-2' xs={4}><Form.Label>Date of notice:</Form.Label><Form.Control type='date' /></Col></Row>
+                    <Row><Col xs={1} /><Col className='ms-2' xs={4}><Form.Label>Date of notice:</Form.Label><Form.Control type='date' /></Col><Col xs={1} /></Row>
 
                 </Form.Group>
 
@@ -116,15 +124,15 @@ const EVArea = () => {
         <>
             <Form.Group className='mb-3' controlId='inputIncident information'>
 
-                <Row className='p-2'><Col xs={6}><Form.Label>Date of incident</Form.Label>
+                <Row className='p-2'><Col xs={1} /><Col xs={5}><Form.Label>Date of incident</Form.Label>
                     <Form.Control type='date' /></Col>
-                    <Col xs={6}><Form.Label>Time of incident</Form.Label>
-                        <Form.Control type='time' /></Col>
+                    <Col xs={5}><Form.Label>Time of incident</Form.Label>
+                        <Form.Control type='time' /></Col><Col xs={1} />
                 </Row>
 
-                <Row className='p-2'><Col><Form.Label>Describe the incident below</Form.Label>
-                    <Form.Control as='textarea' rows={6} /></Col></Row>
-                <Row><Col className='ms-2' xs={4}><Form.Label>Date of notice (if any):</Form.Label><Form.Control type='date' /></Col></Row>
+                <Row className='p-2'><Col xs={1} /><Col><Form.Label>Describe the incident below</Form.Label>
+                    <Form.Control as='textarea' rows={6} /></Col><Col xs={1} /></Row>
+                <Row><Col xs={1} /><Col className='ms-2' xs={4}><Form.Label>Date of notice (if any):</Form.Label><Form.Control type='date' /></Col></Row>
 
             </Form.Group>
         </>
@@ -135,7 +143,7 @@ const SQArea = () => {
     return (
         <>
             <Form.Group className='mb-3' controlId='input Squatter Information'>
-                <Row><Col className='ms-2' xs={4}><Form.Label>Date of notice:</Form.Label><Form.Control type='date' /></Col></Row>
+                <Row><Col xs={1} /><Col className='ms-2' xs={4}><Form.Label>Date of notice:</Form.Label><Form.Control type='date' /></Col></Row>
             </Form.Group>
         </>
     )
@@ -146,10 +154,9 @@ const HTArea = () => {
         <>
             <Container>
                 <Form className='pb-3 ms-2'>
-                    <Row><Col><Form.Label>Monthly Rent Amount</Form.Label>
+                    <Row><Col xs={1} /><Col xs={5}><Form.Label>Monthly Rent Amount</Form.Label>
                         <InputGroup><InputGroup.Text>$</InputGroup.Text><Form.Control type='currency' placeholder='0.00' className='text-end' /></InputGroup></Col>
-                        <Col xs={2} />
-                        <Col><Form.Label>Date of notice:</Form.Label><Form.Control type='date' /></Col></Row>
+                        <Col xs={5}><Form.Label>Date of notice:</Form.Label><Form.Control type='date' /></Col><Col xs={1} /></Row>
                 </Form>
             </Container>
         </>
