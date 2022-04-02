@@ -42,8 +42,11 @@ const CaseModalTab5 = () => {
                     <Col>Service return</Col>
                     <Col><a href='#'>Return_2216CV-00000_2022-03-28</a></Col>
                 </Row>
-                <Row className='pt-5'>
-                    <Form.Label className='fw-bold'>Upload new document here:</Form.Label><Form.Control type='file' />
+                <Row  className='pt-5'>
+                    <div className='fw-bold'>Upload new document here:</div>
+                </Row>
+                <Row className='pt-1'>
+                    <Col xs={7}><Form.Control type='file' /></Col><Col><Form.Control placeholder='Name of document' /></Col>
                 </Row>
             </Container>
 
